@@ -54,7 +54,7 @@ EditText etUsername,etPassword;
         executor.execute(() -> {
             try {
                 // Replace "your_ip_address" with the actual IP address of your development machine
-                URL url = new URL("http://192.168.155.156:5000/create");
+                URL url = new URL("https://instgram-app-backend.onrender.com/create");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
                 try {

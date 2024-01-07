@@ -79,7 +79,7 @@ else{
         executor.execute(() -> {
             try {
                 // Replace "your_ip_address" with the actual IP address of your development machine
-                URL url = new URL("http://192.168.155.156:5000/data");
+                URL url = new URL("https://instgram-app-backend.onrender.com/data");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
                 try {
