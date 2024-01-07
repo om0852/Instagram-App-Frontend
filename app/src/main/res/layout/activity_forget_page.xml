@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".ForgetPage">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="132dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/instagramnamelogo" />
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="357dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="60dp"
+            android:background="#393939"
+            android:ems="10"
+            android:hint="Email address"
+            android:inputType="text"
+            android:lines="0"
+            android:padding="10dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:guidelineUseRtl="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="356dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#0896ff"
+        android:hapticFeedbackEnabled="false"
+        android:text="Sent Otp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

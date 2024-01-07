@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button b1,b2;
+    TextView t1;
     EditText etUsername, etPassword;
 
     @Override
@@ -34,15 +36,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etUsername = findViewById(R.id.editTextText);
         etPassword = findViewById(R.id.editTextText2);
         b1 = findViewById(R.id.button);
+        t1 =findViewById(R.id.forgetlabel);
         b2 = findViewById(R.id.button2);
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
+        t1.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
-    Log.d("Signup","successfully");
+
+    Log.d("Signup",String.valueOf(v.getId()));
 if(v.getId()==R.id.button2){
     Thread thread = new Thread(){
         @Override
@@ -64,6 +69,10 @@ if(v.getId()==R.id.button2){
         }
     };
     thread.start();
+}
+else if(v.getId()==R.id.forgetlabel){
+    Intent i1 =new Intent(MainActivity.this, ForgetPage.class);
+    startActivity(i1);
 }
 else{
 
