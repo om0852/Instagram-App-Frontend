@@ -1,24 +1,11 @@
 package com.example.instagramloginform;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
-import java.io.InputStream;
-import java.net.URL;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,24 +20,24 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        init();
+
+        StoryLoader();
     }
-    public void init() {
+    public void StoryLoader() {
         storiesBar = findViewById(R.id.storybar);
         List<Story> stories = new ArrayList<>();
+                String imageUrl = "om";
 
-//        Picasso.get().load(imageUrl).into(imageView);
-        stories.add(new Story(false));
-        stories.add(new Story(false));
-        stories.add(new Story(false));
-        stories.add(new Story(false));
-        stories.add(new Story(false));
-        stories.add(new Story(false));
-        stories.add(new Story(true));
-
+        stories.add(new Story("salunke","https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",false));
+        stories.add(new Story("om","https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",false));
+        stories.add(new Story("sachin","om",false));
+        stories.add(new Story("om","om",false));
+        stories.add(new Story("om","om",false));
+        stories.add(new Story("om","om",false));
         StoriesAdapter adapter = new StoriesAdapter(stories, this);
         storiesBar.setAdapter(adapter);
         storiesBar.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         storiesBar.addItemDecoration(new StoriesDec(10));
+
     }
 }

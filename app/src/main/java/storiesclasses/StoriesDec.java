@@ -17,5 +17,6 @@ public class StoriesDec extends RecyclerView.ItemDecoration {
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         outRect.right = space;
         outRect.left = space;
+
     }
 }
