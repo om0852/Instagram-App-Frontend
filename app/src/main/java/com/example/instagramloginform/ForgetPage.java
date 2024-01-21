@@ -67,7 +67,6 @@ performApiCall();
                         byte[] input = postData.toString().getBytes("utf-8");
                         os.write(input, 0, input.length);
                     }
-
                     try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()))) {
                         StringBuilder stringBuilder = new StringBuilder();
                         String line;
@@ -93,6 +92,7 @@ performApiCall();
 
                     }
                 } catch (JSONException e) {
+                    Toast.makeText(ForgetPage.this, e.toString(), Toast.LENGTH_SHORT).show();
                     throw new RuntimeException(e);
                 } finally {
                     urlConnection.disconnect();
@@ -101,7 +101,7 @@ performApiCall();
                 e.printStackTrace();
                 Log.d("MainActivity", e.toString());
                 runOnUiThread(() -> {
-                    Toast.makeText(ForgetPage.this, "API call failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgetPage.this, e.toString(), Toast.LENGTH_SHORT).show();
                 });
             }
         });

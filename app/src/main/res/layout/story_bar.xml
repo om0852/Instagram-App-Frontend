@@ -1,0 +1,16 @@
+<!-- activity_home_page.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Other layout elements if any -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/storybar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp" >
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

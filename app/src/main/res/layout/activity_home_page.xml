@@ -1,19 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_home_page.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
+    <!-- Top Toolbar -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <include layout="@layout/layout_top_tab" />
+    </RelativeLayout>
+
+    <!-- Middle Section -->
+    <RelativeLayout
+        android:layout_below="@+id/relativeLayout1"
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/layout_center_viewpager" />
+        <include layout="@layout/story_bar"/>
+    </RelativeLayout>
+
+    <!-- Bottom Navigation -->
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="184dp"
-        android:text="Home Page"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/relativeLayout3">
+
+        <include layout="@layout/layout_bottom_naviagtion" />
+    </RelativeLayout>
+
+</RelativeLayout>
